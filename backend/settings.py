@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'workers',
+    'petoo',
     'django'
 ]
 
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'workers',
+        'NAME': 'petoo',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
