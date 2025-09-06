@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt'
     'corsheaders',
     'petoo',
     'django'
@@ -72,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTH_USER_MODEL='petoo.User'
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
@@ -140,7 +141,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ],
     # For authentication with JWT (if needed later):
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
-    # ]
+     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+     ]
 }
