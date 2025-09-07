@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
-  const [msg, setMsg] = useState('');
-
-  useEffect(() => {
-    axios.get('http://localhost:8000/api/hello/')
-         .then(res => setMsg(res.data.message))
-         .catch(err => console.error(err));
-  }, []);
-
-  return <h1>{msg}</h1>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
