@@ -29,20 +29,22 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
+    # Django default apps...
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework_simplejwt'
-    'corsheaders',
     'petoo',
-    'django'
+
+    # Third-party apps
+    'rest_framework',              # DRF
+    'rest_framework_simplejwt',    # JWT
+    'corsheaders',                 # CORS
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
