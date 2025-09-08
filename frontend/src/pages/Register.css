@@ -1,14 +1,203 @@
 /* Background */
 body {
+  background: url("https://images.unsplash.com/photo-1517849845537-4d257902454a") no-repeat center center/cover;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fdfdfd, #f0f9ff);
+  margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+}/* Background with overlay */
+body {
+  background: url("https://images.unsplash.com/photo-1517849845537-4d257902454a") no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
 }
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* overlay for readability */
+  z-index: 0;
+}
+
+/* Floating pets (decorative bubbles) */
+.floating-pets {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  display: flex;
+  gap: 20px;
+  z-index: 0;
+}
+.floating-pet {
+  width: 40px;
+  height: 40px;
+  background: #ffe4b5;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.floating-pet:nth-child(2) {
+  background: #ffb6c1;
+  animation-delay: 2s;
+}
+.floating-pet:nth-child(3) {
+  background: #add8e6;
+  animation-delay: 4s;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Paw trail decoration */
+.paw-trail {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  display: flex;
+  gap: 15px;
+}
+.paw-print {
+  width: 20px;
+  height: 20px;
+  background: #c7a17a;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(45deg);
+}
+
+/* Form container */
+form {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form header */
+.form-header {
+  margin-bottom: 20px;
+}
+.form-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+.form-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Pet icon animation */
+.pet-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center/cover;
+  filter: drop-shadow(0 7px 3px rgba(48, 18, 8, 0.486));
+  animation: petIconBounce 2s ease-in-out infinite;
+}
+@keyframes petIconBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* Inputs & select */
+input, select {
+  width: 300px;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fafafa;
+}
+input:focus, select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+  background-color: #fff;
+}
+
+/* Input icons */
+input {
+  padding-left: 38px;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 10px center;
+}
+input[placeholder="Username"] {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1077/1077012.png");
+}
+input[type="email"] {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/732/732200.png");
+}
+input[type="password"] {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/565/565655.png");
+}
+
+/* Button with paw hover effect */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.3s;
+}
+button:hover {
+  background: linear-gradient(135deg, #45a049, #5aa45a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+button::after {
+  content: " 🐾";
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+button:hover::after {
+  opacity: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  form {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .form-header h2 {
+    font-size: 20px;
+  }
+  input, select {
+    width: 100%;
+  }
+}
+
+
 
 /* Floating pets (animated circles for now, you can replace with pet icons later) */
 .floating-pets {
