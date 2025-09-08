@@ -1,24 +1,45 @@
 /* Background */
 body {
-  background: url("https://images.unsplash.com/photo-1517849845537-4d257902454a") no-repeat center center/cover;
-  font-family: 'Poppins', sans-serif;
+  
   margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }/* Background with overlay */
-body {
-  background: url("https://images.unsplash.com/photo-1517849845537-4d257902454a") no-repeat center center/cover;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  min-height: 100vh;
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  padding: 20px;
 }
+/* Left image side */
+.register-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.register-image img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Right form side */
+.register-form-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* for floating elements */
+}
+
 body::before {
   content: "";
   position: absolute;
