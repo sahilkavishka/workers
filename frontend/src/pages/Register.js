@@ -30,7 +30,7 @@ function Register() {
           alt="Pet"
         />
       </div>
-      {/* right side image */}
+      
     <div className="register-form-wrapper">
         {/* Background pet elements */}
       <div className="floating-pets">
@@ -79,6 +79,13 @@ function Register() {
         </button>
       </form>
     </div>
+    {/* right side image */}
+      <div className="register-image">
+        <img
+          src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
+          alt="Pet"
+        />
+      </div>
     </div>
   );
 }
