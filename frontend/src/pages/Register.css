@@ -90,11 +90,13 @@ form {
   height: 50px;
   margin: 0 auto 10px;
   background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center/cover;
+  filter: drop-shadow(0 7px 3px rgba(48, 18, 8, 0.486));
+  animation: petIconBounce 2s ease-in-out infinite;
 }
 
 /* Inputs & select */
 input, select {
-  width: 100%;
+  width: 300px;
   padding: 12px;
   margin: 8px 0;
   border: 1px solid #ddd;
@@ -134,4 +136,9 @@ button:hover {
   .form-header h2 {
     font-size: 20px;
   }
+}
+@keyframes petIconBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
 }
