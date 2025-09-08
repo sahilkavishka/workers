@@ -81,11 +81,12 @@ function Register() {
     </div>
     {/* right side image */}
       <div className="register-image">
-        <img
-          src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
-          alt="Pet"
-        />
-      </div>
+  <img
+    src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80"
+    alt="Cute Cat"
+  />
+</div>
+
     </div>
   );
 }
