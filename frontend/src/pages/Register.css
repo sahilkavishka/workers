@@ -1,42 +1,137 @@
+/* Background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdfdfd, #f0f9ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Floating pets (animated circles for now, you can replace with pet icons later) */
+.floating-pets {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  display: flex;
+  gap: 20px;
+  z-index: 0;
+}
+.floating-pet {
+  width: 40px;
+  height: 40px;
+  background: #ffe4b5;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.floating-pet:nth-child(2) {
+  background: #ffb6c1;
+  animation-delay: 2s;
+}
+.floating-pet:nth-child(3) {
+  background: #add8e6;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Paw trail */
+.paw-trail {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  display: flex;
+  gap: 15px;
+}
+.paw-print {
+  width: 20px;
+  height: 20px;
+  background: #c7a17a;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(45deg);
+}
+
+/* Form container */
 form {
-  background: #ffffff;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Form header */
+.form-header {
+  margin-bottom: 20px;
+}
+.form-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+.form-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Pet icon placeholder */
+.pet-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center/cover;
+}
+
+/* Inputs & select */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 300px;
-  margin: 50px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-input,
-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   font-size: 14px;
   outline: none;
+  transition: 0.3s;
 }
-
-input:focus,
-select:focus {
+input:focus, select:focus {
   border-color: #4caf50;
-  box-shadow: 0 0 4px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
 }
 
+/* Button */
 button {
+  width: 100%;
   background: #4caf50;
   color: white;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  margin-top: 12px;
+  transition: background 0.3s;
 }
-
 button:hover {
   background: #45a049;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  form {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .form-header h2 {
+    font-size: 20px;
+  }
 }
