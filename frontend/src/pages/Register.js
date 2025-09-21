@@ -25,10 +25,7 @@ function Register() {
     <div className="register-container">
       {/* Left side image */}
       <div className="register-image">
-        <img
-          src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
-          alt="Pet"
-        />
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="Pet" />
       </div>
       
     <div className="register-form-wrapper">
