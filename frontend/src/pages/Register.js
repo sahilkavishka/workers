@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api";
 import "./Register.css"; 
 
 
 function Register() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -16,8 +18,10 @@ function Register() {
     try {
       await api.post("/register/", form);
       alert("Registered successfully! You can login now.");
+      navigate("/login");
     } catch (err) {
-      alert("Registration failed!");
+      alert(err.response?.data?.error || "Registration failed!");
+
     }
   };
 
@@ -52,8 +56,10 @@ function Register() {
         </div>
         
         <input   
-          placeholder=" username"
-          onChange={(e) => setForm({ ...form, username: e.target.value })}
+           name="username"
+           value={form.username}
+           placeholder="username"
+           onChange={(e) => setForm({ ...form, username: e.target.value })}
         />
         <input
           placeholder=" email address"
