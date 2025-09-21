@@ -7,13 +7,14 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/login/", form);
-      localStorage.setItem("access", res.data.access);
-      localStorage.setItem("refresh", res.data.refresh);
-      alert("Logged in successfully!");
-    } catch (err) {
-      alert("Login failed!");
-    }
+  await api.post("/register/", form);
+  alert("Registered successfully! You can login now.");
+  navigate("/login");
+} catch (err) {
+  console.log(err.response?.data); // see actual error from backend
+  alert(err.response?.data?.error || "Registration failed!");
+}
+
   };
 
   return (
