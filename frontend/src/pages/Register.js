@@ -71,9 +71,7 @@ function Register() {
           <option value="buyer">🏠 Looking for a pet</option>
           <option value="seller">🐾 pet seller </option>
         </select>
-        <button type="submit">
-          Register
-        </button>
+        <button type="submit"> Register </button>
       </form>
     </div>
     {/* right side image */}
