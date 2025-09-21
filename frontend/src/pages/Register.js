@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../api";
 import "./Register.css"; 
 
+
 function Register() {
   const [form, setForm] = useState({
     username: "",
@@ -50,7 +51,7 @@ function Register() {
           <p className="form-subtitle">Connect with loving pet parents & find your perfect companion</p>
         </div>
         
-        <input
+        <input   
           placeholder=" username"
           onChange={(e) => setForm({ ...form, username: e.target.value })}
         />
