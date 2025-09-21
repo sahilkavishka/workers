@@ -161,13 +161,13 @@ input {
   background-position: 10px center;
 }
 input[placeholder="Username"] {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/1077/1077012.png");
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1077/1077012.png") ; padding-left:40px;
 }
 input[type="email"] {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/732/732200.png");
+  background-image: url("https://cdn-icons-png.flaticon.com/512/732/732200.png"); padding-left:40px;
 }
 input[type="password"] {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/565/565655.png");
+  background-image: url("https://cdn-icons-png.flaticon.com/512/565/565655.png");  padding-left:40px;
 }
 
 /* Button with paw hover effect */
